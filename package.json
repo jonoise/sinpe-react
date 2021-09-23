@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/soloamilkar/sinpe-react/issues"
   },
-  "homepage": "https://github.com/soloamilkar/sinpe-react#readme"
+  "homepage": "https://github.com/soloamilkar/sinpe-react#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0"
+  }
 }
