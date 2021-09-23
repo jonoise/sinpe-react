@@ -1,0 +1,24 @@
+{
+  "name": "sinpe-react",
+  "version": "1.0.0",
+  "description": "React component to add SINPE Móvil as payment method.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soloamilkar/sinpe-react.git"
+  },
+  "keywords": [
+    "sinpe",
+    "sinpe movil",
+    "react"
+  ],
+  "author": "Amilkar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soloamilkar/sinpe-react/issues"
+  },
+  "homepage": "https://github.com/soloamilkar/sinpe-react#readme"
+}
