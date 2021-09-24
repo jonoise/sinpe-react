@@ -6,11 +6,14 @@
   "scripts": {
     "lint": "eslint '**/*.js'",
     "lint:fix": "prettier-eslint '**/*.js' --write",
+    "precommit": "lint-staged",
+    "pre-commit": "lint-staged",
     "prepare": "husky install"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "precommit": "lint-staged"
     }
   },
   "lint-staged": {
