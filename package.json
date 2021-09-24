@@ -5,8 +5,18 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint '**/*.js'",
-    "lint:fix": "prettier-eslint '**/*.js' --write",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:fix": "prettier-eslint '**/*.js' --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:fix",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -30,6 +40,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.26.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "prettier-eslint": "^13.0.0",
     "prettier-eslint-cli": "^5.0.1"
   }
