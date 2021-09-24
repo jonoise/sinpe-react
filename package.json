@@ -4,7 +4,11 @@
   "description": "React component to add SINPE Móvil as payment method.",
   "main": "index.js",
   "scripts": {
-    "lint": "npx eslint ."
+    "lint": "npx eslint .",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "repository": {
     "type": "git",
@@ -24,6 +28,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.26.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "prettier": "2.4.1"
   }
 }
