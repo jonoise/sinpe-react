@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint '**/*.js'",
-    "lint:fix": "prettier-eslint '**/*.js' --write",
-    "precommit": "lint-staged",
+    "lint:fix": "prettier-eslint --confing './.prettierrc.json' '**/*.js' --write",
     "pre-commit": "lint-staged",
     "prepare": "husky install"
   },
@@ -44,7 +43,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.26.0",
-    "husky": "^7.0.2",
+    "husky": "^7.0.0",
     "lint-staged": "^11.1.2",
     "prettier-eslint": "^13.0.0",
     "prettier-eslint-cli": "^5.0.1"
