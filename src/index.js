@@ -1,1 +1,1 @@
-console.log('un mensaje ' + 'sabito')
+console.log('alfa', 'beta')
