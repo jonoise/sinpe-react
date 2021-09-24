@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/soloamilkar/sinpe-react#readme",
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-node-resolve": "^13.0.5",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
