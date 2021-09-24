@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint '**/*.js'",
-    "lint:fix": "prettier-eslint --confing './.prettierrc.json' '**/*.js' --write",
+    "lint:fix": "prettier-eslint --config './.prettierrc.json' '**/*.js' --write",
     "pre-commit": "lint-staged",
     "prepare": "husky install"
   },
