@@ -1,2 +1,1 @@
-console.log('un mensaje ' 
-+ "sabito")
+console.log('un mensaje ' + 'sabito')
