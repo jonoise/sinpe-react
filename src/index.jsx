@@ -1,5 +1,19 @@
 import React from 'react'
 
 export const SinpeReact = () => {
-  return <h1>Hello</h1>
+  return (
+    <>
+      <style jsx>{`
+        p {
+          color: red;
+        }
+
+        .hache {
+          color: 'white';
+        }
+      `}</style>
+
+      <h1>Hello</h1>
+    </>
+  )
 }

@@ -4,7 +4,7 @@
   "description": "React component to add SINPE Móvil as payment method.",
   "main": "index.js",
   "scripts": {
-    "prebuild": "rimraf /dist",
+    "prebuild": "rimraf dist",
     "build": "rollup -c",
     "lint": "npx eslint .",
     "prepare": "husky install"
@@ -40,6 +40,10 @@
     "prettier": "2.4.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.57.0",
+    "rollup-plugin-polyfill-node": "^0.7.0",
     "rollup-plugin-terser": "^7.0.2"
+  },
+  "dependencies": {
+    "styled-jsx": "^4.0.1"
   }
 }

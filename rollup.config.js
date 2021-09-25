@@ -1,5 +1,5 @@
 import babel from '@rollup/plugin-babel'
-import resolve from '@rollup/plugin-node-resolve'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 import { terser } from 'rollup-plugin-terser'
 
 const distBundle = 'dist/bundle'
@@ -17,9 +17,9 @@ export default {
     }
   ],
   plugins: [
-    terser(),
-    resolve(),
-    babel({ babelHelpers: 'bundled', exclude: 'node_modules' })
+    babel({ babelHelpers: 'bundled', exclude: 'node_modules' }),
+    nodeResolve({ moduleDirectories: ['src'] }),
+    terser()
   ],
-  external: ['react']
+  external: ['react', 'styled-jsx/style']
 }
