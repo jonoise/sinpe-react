@@ -9,7 +9,8 @@ export default {
   output: [
     {
       file: `${distBundle}.cjs.js`,
-      format: 'cjs'
+      format: 'cjs',
+      exports: 'default'
     },
     {
       file: `${distBundle}.esm.js`,
