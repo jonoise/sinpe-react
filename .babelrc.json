@@ -1,6 +1,6 @@
 {
   "presets": [
-    ["@babel/preset-env", { "targets": { "node": "current" } }],
+    ["@babel/preset-react", { "targets": { "node": "current" } }],
     [
       "@babel/preset-env",
       {
@@ -9,8 +9,7 @@
           "browsers": "> 0.25%, ie 11, not op_mini all, not dead"
         }
       }
-    ],
-    "@babel/preset-react"
+    ]
   ],
   "plugins": ["styled-jsx/babel"]
 }
