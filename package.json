@@ -6,7 +6,6 @@
   "module": "dist/bundle.esm.js",
   "sideEffects": false,
   "source": "src/index.ts",
-  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],

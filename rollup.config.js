@@ -27,10 +27,7 @@ export default {
     }),
     nodeResolve({ moduleDirectories: ['src'] }),
     terser({
-      output: { comments: false },
-      compress: {
-        drop_console: true
-      }
+      output: { comments: false }
     })
   ],
   external: ['react']
