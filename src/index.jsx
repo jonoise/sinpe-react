@@ -1,19 +1,3 @@
-import React from 'react'
+import SinpeReact from './SinpeReact.jsx'
 
-export const SinpeReact = () => {
-  return (
-    <>
-      <style jsx>{`
-        p {
-          color: red;
-        }
-
-        .hache {
-          color: 'white';
-        }
-      `}</style>
-
-      <h1>Hello</h1>
-    </>
-  )
-}
+export default SinpeReact
