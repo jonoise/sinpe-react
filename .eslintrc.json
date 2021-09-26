@@ -6,7 +6,8 @@
   "extends": ["plugin:react/recommended", "standard"],
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "tsx": true
     },
     "ecmaVersion": 12,
     "sourceType": "module"

@@ -33,5 +33,5 @@ export default {
       }
     })
   ],
-  external: ['react', 'styled-jsx/style']
+  external: ['react']
 }
