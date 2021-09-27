@@ -43,5 +43,5 @@ function App() {
 
 | Props           | Type                                        | Required | Description                          |
 |-----------------|---------------------------------------------|----------|--------------------------------------|
-| vendorOptions   | object: {redirectUrl, phoneNumber:optional} | ✔        | Options related to the vendor (you). |
+| vendorOptions   | object: {redirectUrl, phoneNumber}          | ✔        | Options related to the vendor (you). |
 | customerOptions | object: {email: required}                   | ✔        | Options related to your customer.    |
