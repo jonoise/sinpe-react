@@ -1,22 +1,14 @@
-import React from 'react';
+import React from 'react'
+import { SinpeModalProps } from './types'
 
-const SinpeModal = () => {
-  console.log('recreate!');
+const SinpeModal = (props: SinpeModalProps) => {
   return (
-    <div
-      style={{
-        position: 'absolute',
-        width: '500px',
-        height: '500px',
-        background: 'red',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      🎉
-    </div>
-  );
-};
+    <>
+      <div>
+        <div className={props.modalClass}>🎉</div>
+      </div>
+    </>
+  )
+}
 
-export default SinpeModal;
+export default SinpeModal
