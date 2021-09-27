@@ -1,67 +1,55 @@
 {
-  "name": "sinpe-react",
-  "version": "0.0.1",
-  "description": "React component to add SINPE Móvil as payment method.",
-  "main": "dist/bundle.cjs.js",
-  "module": "dist/bundle.esm.js",
-  "sideEffects": false,
-  "source": "src/index.ts",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
-  "exports": {
-    "./package.json": "./package.json",
-    ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js"
-    }
+  "engines": {
+    "node": ">=10"
   },
   "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "rollup -c",
-    "lint": "npx eslint .",
-    "prepare": "husky install"
-  },
-  "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/soloamilkar/sinpe-react.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/soloamilkar/sinpe-react/issues"
-  },
-  "homepage": "https://github.com/soloamilkar/sinpe-react#readme",
-  "devDependencies": {
-    "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.6",
-    "@babel/preset-react": "^7.14.5",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-node-resolve": "^13.0.5",
-    "@rollup/plugin-typescript": "^8.2.5",
-    "@types/react": "^17.0.24",
-    "babel-jest": "^27.2.1",
-    "eslint": "^7.32.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.24.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-react": "^7.26.0",
-    "husky": "^7.0.2",
-    "jest": "^27.2.1",
-    "lint-staged": "^11.1.2",
-    "prettier": "2.4.1",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.57.0",
-    "rollup-plugin-polyfill-node": "^0.7.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "typescript": "^4.4.3"
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
   },
   "peerDependencies": {
-    "react": ">=16.13"
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "name": "sinpe-react",
+  "author": "Amilkar Munoz",
+  "module": "dist/sinpe-react.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/sinpe-react.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/sinpe-react.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^5.0.4",
+    "@types/react": "^17.0.24",
+    "@types/react-dom": "^17.0.9",
+    "husky": "^7.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "size-limit": "^5.0.4",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3"
   }
 }
