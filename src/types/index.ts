@@ -1,17 +1,19 @@
 export type VendorOptions = {
   phone: string
-  thankyouPage: string
+  redirectUrl: string
 }
 
 export type CustomerOptions = {
-  phone?: string
   email: string
-  name: string
 }
 
 export type SinpeProps = {
-  btnClass: string
+  btnClass?: string
+  modalClass?: string
+  vendor: VendorOptions
+  customer: CustomerOptions
+}
+
+export type SinpeModalProps = {
   modalClass: string
-  vendorOptions: VendorOptions
-  customerOptions: CustomerOptions
 }

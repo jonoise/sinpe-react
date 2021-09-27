@@ -1,13 +1,12 @@
 # Sinpe React Component
 
-### ⚠ This tool is in development mode ⚠ 
+### ⚠ This tool is in development mode ⚠
 
 ```md
 Even though the package is available on npm already, it is in development mode and is not functional.
 ```
 
 ### Features
-
 
 - One-click processing payment via Sinpe Móvil.
 - Instant notifications for both parts.
@@ -22,7 +21,6 @@ npm i sinpe-react
 yarn add sinpe-react
 ```
 
-
 ```js
 import React from 'react';
 import SinpeReact from 'sinpe-react';
@@ -31,7 +29,7 @@ function App() {
   const vendorOptions={"..."}
   const customerOptions={"..."}
   return (
-   <SinpeReact 
+   <SinpeReact
     vendorOptions={vendorOptions}
     customerOptions={customerOptions}
    />
@@ -41,7 +39,9 @@ function App() {
 
 ### API
 
-| Props           | Type                                        | Required | Description                          |
-|-----------------|---------------------------------------------|----------|--------------------------------------|
-| vendorOptions   | object: {redirectUrl, phoneNumber}          | ✔        | Options related to the vendor (you). |
-| customerOptions | object: {email: required}                   | ✔        | Options related to your customer.    |
+| Props      | Type                               | Required | Description                          |
+| ---------- | ---------------------------------- | -------- | ------------------------------------ |
+| vendor     | object: {redirectUrl, phoneNumber} | ✔        | Options related to the vendor (you). |
+| customer   | object: {email}                    | ✔        | Options related to your customer.    |
+| btnClass   | string:                            |          | Custom styling class for button.     |
+| modalClass | string                             |          | Custom styling class for button.     |
