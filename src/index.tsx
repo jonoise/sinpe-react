@@ -1,3 +1,3 @@
-import SinpeReact from './SinpeReact.jsx'
+import SinpeReact from './SinpeReact';
 
-export default SinpeReact
+export default SinpeReact;
