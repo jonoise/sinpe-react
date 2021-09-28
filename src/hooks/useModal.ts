@@ -1,9 +1,5 @@
 import { useState } from 'react'
 
-export interface UseModalProps {
-  defaultIsOpen?: boolean
-}
-
 const UseModal = () => {
   const [isOpen, setIsOpen] = useState(false)
 

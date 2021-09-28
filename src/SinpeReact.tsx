@@ -2,10 +2,14 @@ import React from 'react'
 import { SinpeProps } from './types/index'
 import UseModal from './hooks/useModal'
 import SinpeModal from './SinpeModal'
+import styles from '../styles/Modal.module.css'
 
 const SinpeReact = (props: SinpeProps) => {
-  const btnClass = props.btnClass ? props.btnClass : 'defaultButtonStyle'
-  const modalClass = props.modalClass ? props.modalClass : 'defaultModalStyle'
+  const btnClass = props.btnClass ? props.btnClass : styles.defaultButtonStyle
+
+  const modalClass = props.modalClass
+    ? props.modalClass
+    : styles.defaultModalStyle
 
   const { isOpen, onToggle } = UseModal()
 
