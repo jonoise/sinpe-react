@@ -1,6 +1,6 @@
 import React from 'react'
 import { SinpeProps } from './types/index'
-import UseModal from './hooks/useModal'
+import useModal from './hooks/useModal'
 import SinpeModal from './SinpeModal'
 import styles from '../styles/Modal.module.css'
 
@@ -11,7 +11,7 @@ const SinpeReact = (props: SinpeProps) => {
     ? props.modalClass
     : styles.defaultModalStyle
 
-  const { isOpen, onToggle } = UseModal()
+  const { isOpen, onToggle } = useModal()
 
   return (
     <>

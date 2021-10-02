@@ -1,6 +1,27 @@
-.defaultModalStyle {
+.area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.modalContainer {
     position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(167, 167, 167, 0.578);
+}
+
+
+.defaultModalStyle {
+    padding: 10px;
     width: 400px;
     height: 400px;
-    background-color: aqua;
+    border-radius: 21px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow: 8px 8px 16px #bebebe,
+        -8px -8px 16px #ffffff;
 }
