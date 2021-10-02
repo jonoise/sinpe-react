@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "i": "npm link ../node_modules/react/ && npm run dev",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -12,7 +13,7 @@
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "sinpe-react": "^0.1.0"
+    "sinpe-react": "file:.."
   },
   "devDependencies": {
     "@types/react": "17.0.24",
