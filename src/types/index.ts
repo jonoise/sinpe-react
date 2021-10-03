@@ -1,6 +1,6 @@
 export type VendorOptions = {
   phone: string
-  redirectUrl: string
+  callbackUrl: string
 }
 
 export type CustomerOptions = {
@@ -16,4 +16,5 @@ export type SinpeProps = {
 
 export type SinpeModalProps = {
   modalClass: string
+  onClose: Function
 }
