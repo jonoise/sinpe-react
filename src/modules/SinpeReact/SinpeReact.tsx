@@ -1,8 +1,8 @@
 import React from 'react'
-import { SinpeProps } from './types/index'
-import useModal from './hooks/useModal'
-import SinpeModal from './SinpeModal'
-import styles from '../styles/Modal.module.css'
+import { SinpeProps } from '../../types/index'
+import useModal from '../../hooks/useModal'
+import SinpeModal from '../SinpeModal/index'
+import styles from '../../../styles/Modal.module.css'
 
 const SinpeReact = (props: SinpeProps) => {
   const btnClass = props.btnClass ? props.btnClass : styles.defaultButtonStyle
@@ -11,14 +11,14 @@ const SinpeReact = (props: SinpeProps) => {
     ? props.modalClass
     : styles.defaultModalStyle
 
-  const { isOpen, onToggle } = useModal()
+  const { isOpen, onToggle, onClose } = useModal()
 
   return (
     <>
       <button className={btnClass} onClick={onToggle}>
         Pagar con Sinpe
       </button>
-      {isOpen && <SinpeModal modalClass={modalClass} />}
+      {isOpen && <SinpeModal modalClass={modalClass} onClose={onClose} />}
     </>
   )
 }

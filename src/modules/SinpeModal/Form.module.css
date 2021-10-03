@@ -1,0 +1,38 @@
+.shippingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 50%;
+    height: 100%;
+    padding: 5px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.mr5 {
+    margin-right: 5px;
+}
+
+.inlineInputs {
+    display: flex;
+    width: 100%;
+}
+
+
+.formControl {
+    height: 28px;
+    width: 100%;
+    padding: 3px 10px;
+    border-radius: 50px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+}

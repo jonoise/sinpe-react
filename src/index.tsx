@@ -1,3 +1,3 @@
-import SinpeReact from './SinpeReact';
+import SinpeReact from './modules/SinpeReact/SinpeReact'
 
-export default SinpeReact;
+export default SinpeReact
