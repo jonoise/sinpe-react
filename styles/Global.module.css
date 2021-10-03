@@ -58,6 +58,11 @@
     font-size: 12px;
 }
 
+.instructionsContainer {
+    width: 50%;
+    padding: 5px;
+}
+
 .succesBG {
     background: lightgreen;
 }

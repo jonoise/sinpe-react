@@ -16,8 +16,8 @@
 .defaultModalStyle {
     position: relative;
     padding: 10px 19px;
-    width: 400px;
-    height: 400px;
+    max-width: 850px;
+    max-height: 500px;
     border-radius: 21px;
     background: linear-gradient(145deg, #f0f0f0, #cacaca);
     box-shadow: 5px 5px 13px #69696965;
@@ -42,6 +42,11 @@
 }
 
 .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0px 5px;
 }
 
