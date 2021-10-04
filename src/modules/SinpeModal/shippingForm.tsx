@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import useOptions from '../../hooks/useOptions'
 import { useForm } from 'react-hook-form'
 import styles from './Form.module.css'
+import checkIsMobile from '../../lib/isMobile'
+import usePostData from '../../hooks/usePostData'
+import toast from 'light-toast'
 
 const ShippingForm = () => {
   return (
@@ -26,83 +29,147 @@ const ManualShipping = () => {
     return
   }
 
+  const isMobile = checkIsMobile()
+
+  useEffect(() => {
+    if (isMobile) {
+      options.setManualAddress(false)
+      return
+    } else {
+      options.setManualAddress(true)
+    }
+  }, [isMobile])
+
   return (
     <>
-      <label htmlFor="manualShipping">Coordinar entrega por Whatsapp.</label>
-      <input
-        id="manualShipping"
-        type="checkbox"
-        onClick={(e) => handleManualShipping(e)}
-      />
+      {isMobile ? (
+        <div className={`${styles.inlineInputs}`}>
+          <input
+            id="manualShipping"
+            type="checkbox"
+            onClick={(e) => handleManualShipping(e)}
+            className={styles.checkbox}
+          />
+          <label htmlFor="manualShipping">
+            Coordinar entrega por Whatsapp.
+          </label>
+        </div>
+      ) : null}
     </>
   )
 }
 
 const RequiredFields = () => {
+  const isMobile = checkIsMobile()
+  const [emailResponse, postMobileEmail] = usePostData({
+    endpoint: 'send-mobile-email'
+  })
+
   const {
     register,
+    handleSubmit,
     formState: { errors }
   } = useForm()
   const manualAddress = useOptions((state) => state.manualAddress)
-  const inputAddressOptions = { required: true, disabled: manualAddress }
+  const inputAddressOptions = {
+    required: 'Este espacio es requerido',
+    disabled: manualAddress
+  }
+
+  const onSubmit = (data: any) => {
+    if (isMobile) {
+      // SEND MESSAGE
+      window.location.href = 'sms://+50684019933'
+      return
+    }
+    // SEND EMAIL
+    console.log(data)
+    postMobileEmail({
+      email: data.customerEmail,
+      phone: data.customerPhoneNumber,
+      name: data.fullName
+    })
+    if (emailResponse) {
+      toast.success('Email enviado')
+    }
+  }
 
   return (
     <>
-      <form action="" className={styles.form}>
+      <form action="" className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         {/* REQUIRED INPUTS */}
         <div className={styles.inlineInputs}>
           <input
-            {...register('customerEmail', { required: true })}
+            {...register('customerEmail', {
+              required: 'El email es requerido'
+            })}
             type="text"
+            id="customerEmail"
             placeholder="email"
             className={`${styles.formControl} ${styles.mr5}`}
           />
-          {errors.customerEmail && errors.customerEmail}
           <input
-            {...register('customerNumber', { required: true })}
+            {...register('customerPhoneNumber', {
+              required: 'El número de celular es requerido'
+            })}
+            id="customerPhoneNumber"
             type="text"
             placeholder="número celular"
             className={styles.formControl}
           />
-          <div className="inputError">
-            {errors.customerEmail && errors.customerEmail}
-            {errors.customerNumber && errors.customerNumber}
-          </div>
         </div>
 
+        {errors.customerEmail && (
+          <div className={styles.inputError}>
+            <p>{errors.customerEmail.message}</p>
+          </div>
+        )}
+        {errors.customerPhoneNumber && (
+          <div className={styles.inputError}>
+            <p>{errors.customerPhoneNumber.message}</p>
+          </div>
+        )}
+        <input
+          {...register('fullName', { required: 'Tu nombre es requerido.' })}
+          id="fullName"
+          type="text"
+          placeholder="nombre"
+          className={styles.formControl}
+        />
+        {errors.fullName && (
+          <div className={styles.inputError}>
+            <p>{errors.fullName.message}</p>
+          </div>
+        )}
+
         {/* REQUIRED IF NOT MANUALSHIPPING - SHIPPING INPUTS */}
+
         <div className={styles.inlineInputs}>
           <input
-            {...register('customerNumber', inputAddressOptions)}
+            {...register('state', inputAddressOptions)}
             id="state"
             type="text"
             placeholder="provincia"
             className={`${styles.formControl} ${styles.mr5}`}
           />
           <input
-            {...register('customerNumber', inputAddressOptions)}
+            {...register('city', inputAddressOptions)}
             id="city"
             type="text"
             placeholder="cantón"
             className={`${styles.formControl}`}
           />
         </div>
+
         <input
-          {...register('customerNumber', inputAddressOptions)}
-          id="fullName"
-          type="text"
-          placeholder="nombre completo"
-          className={styles.formControl}
-        />
-        <input
-          {...register('customerNumber', inputAddressOptions)}
+          {...register('address1', inputAddressOptions)}
           id="address1"
           type="text"
           placeholder="dirección 1"
           className={styles.formControl}
         />
         <input
-          {...register('customerNumber', {
+          {...register('address2', {
             ...inputAddressOptions,
             required: false
           })}
@@ -111,21 +178,31 @@ const RequiredFields = () => {
           placeholder="dirección 2 (opcional)"
           className={styles.formControl}
         />
+        <SubmitButton />
       </form>
     </>
   )
 }
 
-// const AddressInputs = ({register}) => {
-//   return (
-//     <>
-//       <input {...register} id="fullName" type="text" placeholder="nombre completo" />
-//       <input id="address1" type="text" placeholder="dirección 1" />
-//       <input id="address2" type="text" placeholder="dirección 2 (opcional)" />
-//       <div>
-//         <input id="state" type="text" placeholder="provincia" />
-//         <input id="city" type="text" placeholder="cantón" />
-//       </div>
-//     </>
-//   )
-// }
+const SubmitButton = () => {
+  const isMobile = checkIsMobile()
+  return (
+    <>
+      {isMobile ? (
+        <input
+          name="pay-btn"
+          type="submit"
+          value="Realizar Pago"
+          className={styles.btn}
+        />
+      ) : (
+        <input
+          name="email-btn"
+          type="submit"
+          value="Enviar Email"
+          className={styles.btn}
+        />
+      )}
+    </>
+  )
+}
