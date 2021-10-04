@@ -1,0 +1,82 @@
+.bold {
+    font-weight: bold;
+}
+
+.black {
+    font-weight: bolder;
+}
+
+.smallH4 {
+    font-size: 16px;
+}
+
+.smallP {
+    font-size: 10px;
+}
+
+.warningContainer {
+    padding: 5px 10px;
+    background-color: #FEB2B2;
+    border-radius: 15px;
+    margin-bottom: 8px;
+}
+
+.btn {
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    box-shadow: 3px 3px 7px #69696965;
+    padding: 10px;
+}
+
+.btnNeutral {
+    padding: 10px;
+}
+
+.btnSucess {
+    padding: 10px;
+    background: rgb(247, 247, 247);
+}
+
+.btnWarning {
+    padding: 10px;
+    background: rgb(248, 147, 147);
+}
+
+.emailVisualizer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 5px;
+    background: rgb(194, 194, 194);
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.instructionsContainer {
+    width: 50%;
+    padding: 5px;
+}
+
+.succesBG {
+    background: lightgreen;
+}
+
+.errorBG {
+    background: #FEB2B2;
+}
+
+@media only screen and (max-width: 600px) {
+    .emailVisualizer p {
+        font-size: 19px;
+    }
+
+    .instructionsContainer {
+        width: 100%;
+    }
+}

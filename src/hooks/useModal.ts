@@ -1,16 +1,12 @@
 import { useState } from 'react'
 
-export interface UseModalProps {
-  defaultIsOpen?: boolean
-}
-
-const UseModal = () => {
+const useModal = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   const onOpen = () => {
     setIsOpen(true)
   }
-  const onClosed = () => {
+  const onClose = () => {
     setIsOpen(false)
   }
   const onToggle = () => {
@@ -20,9 +16,9 @@ const UseModal = () => {
   return {
     isOpen: !!isOpen,
     onOpen,
-    onClosed,
+    onClose,
     onToggle
   }
 }
 
-export default UseModal
+export default useModal
