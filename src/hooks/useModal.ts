@@ -6,7 +6,7 @@ const useModal = () => {
   const onOpen = () => {
     setIsOpen(true)
   }
-  const onClosed = () => {
+  const onClose = () => {
     setIsOpen(false)
   }
   const onToggle = () => {
@@ -16,7 +16,7 @@ const useModal = () => {
   return {
     isOpen: !!isOpen,
     onOpen,
-    onClosed,
+    onClose,
     onToggle
   }
 }
