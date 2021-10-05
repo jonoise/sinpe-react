@@ -83,10 +83,28 @@ function App() {
 
 ## API
 
-| Props      | Type                               | Required | Description                          |
-| ---------- | ---------------------------------- | -------- | ------------------------------------ |
-| vendor     | object: {redirectUrl, phoneNumber} | ✔        | Options related to the vendor (you). |
-| customer   | object: {email}                    | ✔        | Options related to your customer.    |
-| order      | object: {totalAmount, items[], order_id?}     | ✔        | Options related to the order.    |
-| btnClass   | string:                            |          | Custom styling class for button.     |
-| modalClass | string                             |          | Custom styling class for button.     |
+| Props      | Type                                      | Required | Description                          |
+| ---------- | ----------------------------------------- | -------- | ------------------------------------ |
+| vendor     | object: {redirectUrl, phoneNumber}        | ✔        | Options related to the vendor (you). |
+| customer   | object: {email}                           | ✔        | Options related to your customer.    |
+| order      | object: {totalAmount, items[], order_id?} | ✔        | Options related to the order.        |
+| btnClass   | string:                                   |          | Custom styling class for button.     |
+| modalClass | string                                    |          | Custom styling class for button.     |
+
+## Troubleshooting
+
+### Typing error from env variable -> conf: {{api_key: process.env.SINPE_API_KEY}}
+
+When getting an Environment Variable you need to specify the type of value that variable is.
+
+```js
+declare var process: {
+  env: {
+    SINPE_API_KEY: string
+  }
+}
+
+// and call the conf
+conf={api_key:process.env.SINPE_API_KEY}
+<SinpeReact conf={conf} />
+```
