@@ -1,39 +1,31 @@
 import { useCallback, useState } from 'react'
 import axios from '../lib/http'
 
-interface IRes {
-  data: object | null
-  error: unknown | null
-  isLoading: boolean | null
+interface usePostDataState {
+  data: any
+  error: any
+  loading: boolean
 }
 
-const usePostData = ({
-  endpoint,
-  headers
-}: {
-  endpoint: string
-  headers?: object | null
-}) => {
-  const [res, setRes] = useState<IRes>({
+const usePostData = (url: string) => {
+  const [res, setRes] = useState<usePostDataState>({
     data: null,
     error: null,
-    isLoading: false
+    loading: false
   })
-  // You POST method here
-  const callAPI = (payload: any) =>
-    useCallback(() => {
-      setRes((prevState) => ({ ...prevState, isLoading: true }))
-      axios
-        .post(endpoint, headers, payload)
-        .then((res) => {
-          setRes({ data: res.data, isLoading: false, error: null })
-        })
-        .catch((error) => {
-          setRes({ data: null, isLoading: false, error })
-        })
-    }, [endpoint, headers, payload])
 
-  return [res, callAPI] as const
+  const makeRequest = useCallback(
+    (obj: any) => {
+      setRes((prev) => ({ ...prev, loading: true }))
+      axios
+        .post(url, obj)
+        .then((res) => setRes({ data: res.data, error: null, loading: false }))
+        .catch((err) => setRes({ data: null, error: err, loading: false }))
+    },
+    [url]
+  )
+
+  return [res, makeRequest] as const
 }
 
 export default usePostData
