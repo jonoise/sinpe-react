@@ -1,6 +1,6 @@
 import React from 'react'
 import globalStyles from '../../../styles/Global.module.css'
-import checkMobile from '../../lib/isMobile'
+import checkMobile from '../../logic/isMobile'
 
 const Instructions = () => {
   const isMobile = checkMobile()

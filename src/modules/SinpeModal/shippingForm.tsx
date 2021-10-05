@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import useOptions from '../../hooks/useOptions'
 import { useForm } from 'react-hook-form'
 import styles from './Form.module.css'
-import checkIsMobile from '../../lib/isMobile'
+import checkIsMobile from '../../logic/isMobile'
 import usePostData from '../../hooks/usePostData'
 import toast from 'light-toast'
 
@@ -79,7 +79,7 @@ const RequiredFields = () => {
       toast.loading('Cargando')
     } else {
       toast.hide()
-      if (res.error === null) {
+      if (res.error) {
         toast.fail('Algo falló, inténtalo de nuevo en unos minutos.')
       }
       if (res.data && res.data.redirectUrl) {

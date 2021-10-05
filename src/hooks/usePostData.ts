@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import axios from '../lib/http'
+import axios from '../logic/http'
 
 interface usePostDataState {
   data: any

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import axios from '../lib/http'
+import axios from '../logic/http'
 
 const UseFetch = (endpoint: string | null = null) => {
   const [isLoading, setIsLoading] = useState(true)
