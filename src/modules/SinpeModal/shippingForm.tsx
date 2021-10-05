@@ -61,9 +61,7 @@ const ManualShipping = () => {
 
 const RequiredFields = () => {
   const isMobile = checkIsMobile()
-  const [emailResponse, postMobileEmail] = usePostData({
-    endpoint: 'send-mobile-email'
-  })
+  const [res, makeRequest] = usePostData('send-switch-email')
 
   const {
     register,
@@ -76,6 +74,20 @@ const RequiredFields = () => {
     disabled: manualAddress
   }
 
+  useEffect(() => {
+    if (res.loading) {
+      toast.loading('Cargando')
+    } else {
+      toast.hide()
+      if (res.error === null) {
+        toast.fail('Algo falló, inténtalo de nuevo en unos minutos.')
+      }
+      if (res.data && res.data.redirectUrl) {
+        window.location.href = `${res.data.redirectUrl}`
+      }
+    }
+  }, [res])
+
   const onSubmit = (data: any) => {
     if (isMobile) {
       // SEND MESSAGE
@@ -83,15 +95,11 @@ const RequiredFields = () => {
       return
     }
     // SEND EMAIL
-    console.log(data)
-    postMobileEmail({
+    makeRequest({
       email: data.customerEmail,
       phone: data.customerPhoneNumber,
       name: data.fullName
     })
-    if (emailResponse) {
-      toast.success('Email enviado')
-    }
   }
 
   return (
