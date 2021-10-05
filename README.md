@@ -87,5 +87,6 @@ function App() {
 | ---------- | ---------------------------------- | -------- | ------------------------------------ |
 | vendor     | object: {redirectUrl, phoneNumber} | ✔        | Options related to the vendor (you). |
 | customer   | object: {email}                    | ✔        | Options related to your customer.    |
+| order      | object: {totalAmount, items[], order_id?}     | ✔        | Options related to the order.    |
 | btnClass   | string:                            |          | Custom styling class for button.     |
 | modalClass | string                             |          | Custom styling class for button.     |
