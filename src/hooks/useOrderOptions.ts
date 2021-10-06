@@ -1,16 +1,25 @@
 import create from 'zustand'
 import { devtools } from 'zustand/middleware'
-import { OrderOptions } from '../types'
 
-const useOrderOptions = create<OrderOptions>(
+interface IuseOrderOptions {
+  totalAmount: number | null
+  user_id?: number | string | null
+  order_id?: number | string | null
+  products?: object[] | null
+  details?: string | null
+  service: string
+  setOrderOptions: (payload: object) => void
+}
+
+const useOrderOptions = create<IuseOrderOptions>(
   devtools((set) => ({
-    totalAmount: 0,
+    totalAmount: null,
     user_id: null,
     order_id: null,
     products: null,
     details: null,
     service: 'sinpe',
-    setOrderOptions: (payload: object) =>
+    setOrderOptions: (payload) =>
       set((state) => ({
         ...state,
         ...payload
