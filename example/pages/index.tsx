@@ -1,7 +1,6 @@
 import axios from 'axios'
 import type { NextPage } from 'next'
 import SinpeReact from 'sinpe-react'
-
 declare var process : {
   env: {
     SINPE_API_KEY: string,
@@ -15,10 +14,11 @@ const Home: NextPage = () => {
   }
 
   return (
-    <SinpeReact 
+    <SinpeReact
+    credentials={{api_key:"asd", public_key:"bcd"}}
     vendorPhoneNumber="84019933" 
-    order={{amount:5000}} 
-    callbackFunction={post_to_my_api} />
+    order={{totalAmount: 5000}}
+    />
   )
 
 }
