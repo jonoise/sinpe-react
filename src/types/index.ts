@@ -1,22 +1,21 @@
 export type CredentialsOptions = {
-  public_key: string | null
-  api_key: string | null
+  public_key: string | null | undefined
+  api_key: string | null | undefined
 }
 
 export type OrderOptions = {
   totalAmount: number
-  products?: object[] | null
-  orderId?: string | null
-  details?: string | null
+  products?: object[] | null | undefined
+  orderId?: string | null | undefined
+  details?: string | null | undefined
   userId?: string | number
-  setOrderOptions: (payload: object) => void
 }
 
 export type SinpeProps = {
   vendorPhoneNumber: string
   order: OrderOptions
-  credentials?: CredentialsOptions
-  callbackFunction?: (() => any) | null
+  credentials?: CredentialsOptions | undefined | null
+  callbackFunction?: (() => any) | undefined
   btnClass?: string
   modalClass?: string
 }
