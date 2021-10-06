@@ -1,10 +1,11 @@
 import create from 'zustand'
 import { devtools } from 'zustand/middleware'
+import { CredentialsOptions } from '../types'
 
 interface ICredentials {
   public_key: string | null
   private_key: string | null
-  setCredentials: (payload: object | undefined) => void
+  setCredentials: (credentials: CredentialsOptions | null | undefined) => void
 }
 
 const useCredentialsOptions = create<ICredentials>(
