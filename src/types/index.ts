@@ -1,20 +1,22 @@
-export type ConfOptions = {
-  public_key: string
-  api_key: string
+export type CredentialsOptions = {
+  public_key: string | null
+  api_key: string | null
 }
 
 export type OrderOptions = {
-  amount: number
-  products?: object[]
-  orderId?: string
-  details?: string
+  totalAmount: number
+  products?: object[] | null
+  orderId?: string | null
+  details?: string | null
+  userId?: string | number
+  setOrderOptions: (payload: object) => void
 }
 
 export type SinpeProps = {
   vendorPhoneNumber: string
   order: OrderOptions
-  conf?: ConfOptions
-  callbackFunction?: Function
+  credentials?: CredentialsOptions
+  callbackFunction?: (() => any) | null
   btnClass?: string
   modalClass?: string
 }
