@@ -20,7 +20,7 @@ export type SinpeProps = {
   // SETTINGS STORE
   callbackFunction?: (() => any) | undefined
   styles?: StyleTypes | null
-  redirectUrl?: string
+  redirectUrl?: string | undefined
 }
 
 /////////////////////
