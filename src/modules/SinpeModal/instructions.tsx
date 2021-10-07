@@ -56,26 +56,34 @@ const MobileInstructions = () => {
       <h3>Instrucciones</h3>
       <ol>
         <li>
-          <span className={globalStyles.bold}>1.</span> Al hacer click en
-          "Finalizar compra" una ventana se abrirá para efectuar el pago por
+          <span className={globalStyles.bold}>1.</span> Elija su entidad
+          bancaria.
+        </li>
+        <li>
+          <span className={globalStyles.bold}>2.</span> Al hacer click en
+          "Realizar pago" una ventana se abrirá para efectuar el pago por
           mensaje de texto.
         </li>
         <li>
-          <span className={globalStyles.bold}>2.</span> Acepte la ventana y
+          <span className={globalStyles.bold}>3.</span> Acepte la ventana y
           envíe el mensaje.
         </li>
         <li>
-          <span className={globalStyles.bold}>3.</span>
-          {`Espere a que SINPE le responda de vuelta con un número de comprobante.
-        (Puede tardar hasta 5 minutos.)`}
+          <span className={globalStyles.bold}>4. </span>
+          Espere a que SINPE le responda de vuelta con un número de comprobante.
+          (Puede tardar hasta 5 minutos.)
         </li>
         <li>
-          <span className={globalStyles.bold}>4. Vuelva a esta ventana</span> y
+          <span className={globalStyles.bold}>5. Vuelva a esta ventana</span> y
           agregue el número de comprobante en el espacio de abajo.
         </li>
         <li>
-          <span className={globalStyles.bold}>5.</span> Felicidades su compra se
-          ha realizado con éxito.
+          <span className={globalStyles.bold}>6.</span> Confirme la orden.{' '}
+          <span className={globalStyles.alert}>Este paso es indispensable</span>
+        </li>
+        <li>
+          <span className={globalStyles.bold}>7.</span> Felicidades su orden se
+          completó. Se lo dejaremos saber apenas la confirmemos. 🙂
         </li>
       </ol>
     </>
