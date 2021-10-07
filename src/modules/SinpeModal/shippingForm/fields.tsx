@@ -1,63 +1,11 @@
 import React, { useEffect } from 'react'
-import useOptions from '../../hooks/useOptions'
+import useOptions from '../../../hooks/useOptions'
 import { useForm } from 'react-hook-form'
+import checkIsMobile from '../../../logic/isMobile'
+import usePostData from '../../../hooks/usePostData'
 import styles from './Form.module.css'
-import checkIsMobile from '../../logic/isMobile'
-import usePostData from '../../hooks/usePostData'
 import toast from 'light-toast'
-
-const ShippingForm = () => {
-  return (
-    <div className={styles.shippingContainer}>
-      <ManualShipping />
-      <RequiredFields />
-    </div>
-  )
-}
-
-export default ShippingForm
-
-const ManualShipping = () => {
-  const options = useOptions()
-
-  const handleManualShipping = (e: React.ChangeEvent<any>) => {
-    if (e.target.checked) {
-      options.setManualAddress(true)
-      return
-    }
-    options.setManualAddress(false)
-    return
-  }
-
-  const isMobile = checkIsMobile()
-
-  useEffect(() => {
-    if (isMobile) {
-      options.setManualAddress(false)
-      return
-    } else {
-      options.setManualAddress(true)
-    }
-  }, [isMobile])
-
-  return (
-    <>
-      {isMobile ? (
-        <div className={`${styles.inlineInputs}`}>
-          <input
-            id="manualShipping"
-            type="checkbox"
-            onClick={(e) => handleManualShipping(e)}
-            className={styles.checkbox}
-          />
-          <label htmlFor="manualShipping">
-            Coordinar entrega por Whatsapp.
-          </label>
-        </div>
-      ) : null}
-    </>
-  )
-}
+import SubmitButton from './submitButton'
 
 const RequiredFields = () => {
   const isMobile = checkIsMobile()
@@ -192,25 +140,4 @@ const RequiredFields = () => {
   )
 }
 
-const SubmitButton = () => {
-  const isMobile = checkIsMobile()
-  return (
-    <>
-      {isMobile ? (
-        <input
-          name="pay-btn"
-          type="submit"
-          value="Realizar Pago"
-          className={styles.btn}
-        />
-      ) : (
-        <input
-          name="email-btn"
-          type="submit"
-          value="Enviar Email"
-          className={styles.btn}
-        />
-      )}
-    </>
-  )
-}
+export default RequiredFields
