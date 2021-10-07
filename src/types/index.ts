@@ -12,12 +12,15 @@ export type OrderOptions = {
 }
 
 export type SinpeProps = {
+  // SINGLE STORES
   vendorPhoneNumber: string
   order: OrderOptions
   credentials?: CredentialsOptions | undefined | null
+
+  // SETTINGS STORE
   callbackFunction?: (() => any) | undefined
-  btnClass?: string
-  modalClass?: string
+  styles?: StyleTypes | null
+  redirectUrl?: string
 }
 
 /////////////////////
@@ -27,4 +30,13 @@ export type SinpeProps = {
 export type SinpeModalProps = {
   modalClass: string
   onClose: Function
+}
+
+//////////////////////
+// ↓ STYLES TYPES ↓ //
+//////////////////////
+
+export type StyleTypes = {
+  modalClass: string
+  btnClass: string
 }

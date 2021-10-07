@@ -4,10 +4,14 @@ import useModal from '../../hooks/useModal'
 import SinpeModal from '../SinpeModal/index'
 import styles from '../../../styles/Modal.module.css'
 import Initializer from './Initializer'
+
 const SinpeReact = (props: SinpeProps) => {
-  const btnClass = props.btnClass ? props.btnClass : styles.defaultButtonStyle
-  const modalClass = props.modalClass
-    ? props.modalClass
+  const btnClass = props.styles?.btnClass
+    ? props.styles.btnClass
+    : styles.defaultButtonStyle
+
+  const modalClass = props.styles?.modalClass
+    ? props.styles?.modalClass
     : styles.defaultModalStyle
 
   const { isOpen, onToggle, onClose } = useModal()
