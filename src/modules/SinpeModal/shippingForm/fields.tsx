@@ -98,8 +98,8 @@ const RequiredFields = () => {
           </div>
         )}
 
-        {/* REQUIRED IF NOT MANUALSHIPPING - SHIPPING INPUTS */}
-
+        {/* REQUIRED IF NOT MANUALSHIPPING */}
+        {/* ↓ SHIPPING INPUTS ↓ */}
         <div className={styles.inlineInputs}>
           <input
             {...register('state', inputAddressOptions)}
