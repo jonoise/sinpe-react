@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 (module.exports = {
   title: 'Sinpe React Website',
   tagline: 'Sinpe Component for React',
-  url: 'https://soloamilkar.github.io/sinpe-react',
+  url: 'https://soloamilkar.github.io',
   baseUrl: '/sinpe-react/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

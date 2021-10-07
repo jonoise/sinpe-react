@@ -12,7 +12,6 @@ const Home: NextPage = () => {
   const post_to_my_api = (order:any) => {
     axios.post("my_api_url")
   }
-
   return (
     <SinpeReact
     credentials={{api_key:"asd", public_key:"bcd"}}
