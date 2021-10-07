@@ -14,6 +14,11 @@
     font-size: 10px;
 }
 
+.alert {
+    color: tomato;
+    font-weight: 600;
+}
+
 .warningContainer {
     padding: 5px 10px;
     background-color: #FEB2B2;

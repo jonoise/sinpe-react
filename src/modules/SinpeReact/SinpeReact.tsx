@@ -1,7 +1,7 @@
 import React from 'react'
-import { SinpeProps } from '../../types/index'
+import { SinpeProps } from '../../types'
 import useModal from '../../hooks/useModal'
-import SinpeModal from '../SinpeModal/index'
+import SinpeModal from '../SinpeModal'
 import styles from '../../../styles/Modal.module.css'
 import Initializer from './Initializer'
 

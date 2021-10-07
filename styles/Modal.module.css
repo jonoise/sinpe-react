@@ -1,6 +1,6 @@
 .container {
     font-family: 'Segoe UI', sans-serif;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -55,6 +55,9 @@
 
 
 @media only screen and (max-width: 600px) {
+    .container {
+        min-height: 120vh;
+    }
 
     .content {
         flex-direction: column;
@@ -63,6 +66,7 @@
     .defaultModalStyle {
         display: flex;
         flex-direction: column;
+        padding: 5px 8px;
     }
 
     .defaultModalStyle h3 {
