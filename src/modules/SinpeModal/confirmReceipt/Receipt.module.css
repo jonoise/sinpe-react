@@ -1,0 +1,69 @@
+.receiptForm {
+    padding: 14px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.receiptForm small {
+    margin-bottom: 2px;
+}
+
+.formControl {
+    height: 28px;
+    width: 70%;
+    padding: 3px 10px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+}
+
+.receiptBtn {
+    color: whitesmoke;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    background-color: rgb(77, 171, 92);
+    box-shadow: 3px 3px 7px #69696965;
+}
+
+
+.mr5 {
+    margin-right: 5px;
+}
+
+.inlineInputs {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    min-height: 30px;
+}
+
+.inlineInputs label {
+    line-height: 1;
+}
+
+.inputError {
+    width: 100%;
+    background: rgb(216, 216, 216);
+    border: none;
+    border-radius: 50px;
+}
+
+.inputError p {
+    color: lightcoral;
+    font-size: 12px;
+    margin: 2px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .receiptBtn {
+        font-size: 12px;
+    }
+}
