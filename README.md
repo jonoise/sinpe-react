@@ -3,7 +3,7 @@
 ## ⚠ This tool is in development mode ⚠
 
 ```md
-Even though the package is available on npm already, it is in development mode and is not suitable for production.
+The package is available on npm already but it is in development mode and is NOT suitable for production.
 ```
 
 ## Features
