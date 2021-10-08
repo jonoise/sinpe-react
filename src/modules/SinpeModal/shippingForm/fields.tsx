@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
 import useOptions from '../../../hooks/useOptions'
-import { useForm } from 'react-hook-form'
 import checkIsMobile from '../../../logic/isMobile'
 import usePostData from '../../../hooks/usePostData'
 import styles from './Form.module.css'
 import toast from 'light-toast'
 import SubmitButton from './submitButton'
+import SelectBank from './selectBank'
+
+import { useForm } from 'react-hook-form'
 
 const RequiredFields = () => {
   const isMobile = checkIsMobile()
@@ -14,7 +16,8 @@ const RequiredFields = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { errors },
+    control
   } = useForm()
   const manualAddress = useOptions((state) => state.manualAddress)
   const inputAddressOptions = {
@@ -53,6 +56,7 @@ const RequiredFields = () => {
   return (
     <>
       <form action="" className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <SelectBank control={control} errors={errors} />
         {/* REQUIRED INPUTS */}
         <div className={styles.inlineInputs}>
           <input

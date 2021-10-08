@@ -62,6 +62,7 @@
     "postcss": "^8.3.8",
     "react-hook-form": "^7.17.0",
     "react-icons": "^4.2.0",
+    "react-select": "^5.1.0",
     "zustand": "^3.5.12"
   }
 }
