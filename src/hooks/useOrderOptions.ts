@@ -2,7 +2,7 @@ import create from 'zustand'
 import { devtools } from 'zustand/middleware'
 
 interface IuseOrderOptions {
-  totalAmount: number | null
+  totalAmount: number
   user_id?: number | string | null
   order_id?: number | string | null
   products?: object[] | null
@@ -13,7 +13,7 @@ interface IuseOrderOptions {
 
 const useOrderOptions = create<IuseOrderOptions>(
   devtools((set) => ({
-    totalAmount: null,
+    totalAmount: 0,
     user_id: null,
     order_id: null,
     products: null,
