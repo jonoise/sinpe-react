@@ -1,10 +1,10 @@
-![Banner image with Sinpe-React Logo](https://user-images.githubusercontent.com/71573508/136670885-0fe00e99-8dea-4328-883b-e86ee1771053.jpg)
-
 # Sinpe React Component
+
+![Banner image with Sinpe-React Logo](https://user-images.githubusercontent.com/71573508/136670885-0fe00e99-8dea-4328-883b-e86ee1771053.jpg)
 
 ## What is Sinpe React?
 
-Sinpe-React is a React wrapper around the SINPE Móvil flow to send money via sms. It's just an automation that provide a basic API. 
+Sinpe-React is a React wrapper around the SINPE Móvil flow to send money via sms. It's just an automation that provide a basic API.
 
 ## Docs.
 
@@ -74,12 +74,12 @@ import "sinpe-react/dist/sinpe-react.cjs.development.css"
 function App() {
   const vendorOptions={"..."}
   const customerOptions={"..."}
-  
+
   const styles = {
     modalClass: "myModalClass",
     btnClass: "myBtnClass"
   }
-  
+
   return (
    <SinpeReact
     vendorOptions={vendorOptions}
@@ -92,13 +92,13 @@ function App() {
 
 ## API
 
-| Props      | Type                                      | Required | Description                          |
-| ---------- | ----------------------------------------- | -------- | ------------------------------------ |
-| vendorPhoneNumber| string                               | ✔        | The number that receives the transfer. |
-| order  | object                                        | ✔        | Options related to your customer.    |
-| callbackFunction| function                             |          | Fires after customer confirm order receipt number.     |
-| redirectUrl| string                                    |        | Url you want to redirect the user after the purchase, eg: /thankyou.        |
-| styles | object                                        |          | Custom stylings classes.     |
+| Props             | Type     | Required | Description                                                          |
+| ----------------- | -------- | -------- | -------------------------------------------------------------------- |
+| vendorPhoneNumber | string   | ✔        | The number that receives the transfer.                               |
+| order             | object   | ✔        | Options related to your customer.                                    |
+| callbackFunction  | function |          | Fires after customer confirm order receipt number.                   |
+| redirectUrl       | string   |          | Url you want to redirect the user after the purchase, eg: /thankyou. |
+| styles            | object   |          | Custom stylings classes.                                             |
 
 ## Troubleshooting
 

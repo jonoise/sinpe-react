@@ -2,22 +2,26 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introducción
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Vamos a descubrir **Sinpe React en menos de 5 minutos**.
 
 ## Getting Started
 
-Get started by **creating a new site**.
+Crea una aplicación de **react**.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+```bash
+npx create-react-app my-store && cd my-store
+```
 
-## Generate a new site
+## Instala Sinpe-React
 
-Generate a new Docusaurus site using the **classic template**:
+Puedes usar **npm** o **yarn**:
 
-```shell
-npx @docusaurus/init@latest init my-website classic
+```bash
+npm install sinpe-react
+--OR
+yarn add sinpe-react
 ```
 
 ## Start your site
