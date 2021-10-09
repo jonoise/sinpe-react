@@ -1,17 +1,17 @@
 # Sinpe React Component
 
-## ⚠ This tool is in development mode ⚠
+## What is Sinpe React?
 
-```md
-The package is available on npm already but it is in development mode and is NOT suitable for production.
-```
+Sinpe-React is a React wrapper around the SINPE Móvil flow to send money via sms. It's just an automation that provide a basic API. 
 
 ## Features
 
-- One-click processing payment via Sinpe Móvil.
-- Instant notifications for both parts.
-- Custom hooks to open, close, start, terminate process.
-- Customizable styling.
+- Send money via sms.
+- Connect to your backend.
+- Define your data structure.
+- Written in Typecript.
+- User friendly.
+- Styles highly customizable.
 
 ## Quickstart
 
@@ -27,12 +27,12 @@ import SinpeReact from 'sinpe-react';
 import "sinpe-react/dist/sinpe-react.cjs.development.css"
 
 function App() {
-  const vendorOptions={"..."}
-  const customerOptions={"..."}
+  const order={"..."}
+  const myNumber={"..."}
   return (
    <SinpeReact
-    vendorOptions={vendorOptions}
-    customerOptions={customerOptions}
+    vendorPhoneNumber={myNumber}
+    order={order}
    />
   );
 }
@@ -60,8 +60,6 @@ export default MyApp
 
 You can add custom styling to both button and modal components using `btnClass` and `modalClass` respectively as props of SinpeReact component.
 
-In this case is not necessary to import default styling file.
-
 ```js
 import React from 'react';
 import SinpeReact from 'sinpe-react';
@@ -70,12 +68,17 @@ import "sinpe-react/dist/sinpe-react.cjs.development.css"
 function App() {
   const vendorOptions={"..."}
   const customerOptions={"..."}
+  
+  const styles = {
+    modalClass: "myModalClass",
+    btnClass: "myBtnClass"
+  }
+  
   return (
    <SinpeReact
     vendorOptions={vendorOptions}
     customerOptions={customerOptions}
-    btnClass="myBtnClass"
-    modalClass="myModalClass"
+    styles={styles}
    />
   );
 }
@@ -85,11 +88,11 @@ function App() {
 
 | Props      | Type                                      | Required | Description                          |
 | ---------- | ----------------------------------------- | -------- | ------------------------------------ |
-| vendor     | object: {redirectUrl, phoneNumber}        | ✔        | Options related to the vendor (you). |
-| customer   | object: {email}                           | ✔        | Options related to your customer.    |
-| order      | object: {totalAmount, items[], order_id?} | ✔        | Options related to the order.        |
-| btnClass   | string:                                   |          | Custom styling class for button.     |
-| modalClass | string                                    |          | Custom styling class for button.     |
+| vendorPhoneNumber| string                               | ✔        | The number that receives the transfer. |
+| order  | object                                        | ✔        | Options related to your customer.    |
+| callbackFunction| function                             |          | Fires after customer confirm order receipt number.     |
+| redirectUrl| string                                    |        | Url you want to redirect the user after the purchase, eg: /thankyou.        |
+| styles | object                                        |          | Custom stylings classes.     |
 
 ## Troubleshooting
 
