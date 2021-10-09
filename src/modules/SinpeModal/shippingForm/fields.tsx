@@ -8,11 +8,14 @@ import SubmitButton from './submitButton'
 import SelectBank from './selectBank'
 
 import { useForm } from 'react-hook-form'
-
+import createMessage from '../../../logic/createMessage'
+import useOrderOptions from '../../../hooks/useOrderOptions'
+import useVendorPhoneNumber from '../../../hooks/useVendorPhoneNumber'
 const RequiredFields = () => {
   const isMobile = checkIsMobile()
   const [res, makeRequest] = usePostData('send-switch-email')
-
+  const orderTotalAmount = useOrderOptions((state) => state.totalAmount)
+  const vendorPhoneNumber = useVendorPhoneNumber((state) => state.current)
   const {
     register,
     handleSubmit,
@@ -42,7 +45,13 @@ const RequiredFields = () => {
   const onSubmit = (data: any) => {
     if (isMobile) {
       // SEND MESSAGE
-      window.location.href = 'sms://+50684019933'
+      console.log(data)
+      const message = createMessage(
+        data.bank,
+        orderTotalAmount,
+        vendorPhoneNumber
+      )
+      window.location.href = `sms://${message}`
       return
     }
     // SEND EMAIL
