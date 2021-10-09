@@ -2,13 +2,13 @@ import create from 'zustand'
 import { devtools } from 'zustand/middleware'
 
 interface IVendorPhone {
-  current: string | null
+  current: string
   setCurrent: (number: string) => void
 }
 
 const useVendorPhoneNumber = create<IVendorPhone>(
   devtools((set) => ({
-    current: null,
+    current: '',
     setCurrent: (number) =>
       set(() => ({
         current: number
