@@ -1,3 +1,5 @@
+![Banner image with Sinpe-React Logo](https://user-images.githubusercontent.com/71573508/136670885-0fe00e99-8dea-4328-883b-e86ee1771053.jpg)
+
 # Sinpe React Component
 
 ## What is Sinpe React?
