@@ -1,5 +1,6 @@
 import { SinpeProps } from '../types'
 import checkCredentialsOrCallback from './checkCredentialsOrCallback'
+import { checkTotalAmount } from './checkTotalAmount'
 
 export default (props: SinpeProps): boolean => {
   // CHECK IF PROPERLY CONFIG
@@ -7,7 +8,8 @@ export default (props: SinpeProps): boolean => {
     props.credentials,
     props.callbackFunction
   )
-  if (!CREDENTIALS) {
+  const VALID_AMOUNT = checkTotalAmount(props.order.totalAmount)
+  if (!CREDENTIALS || !VALID_AMOUNT) {
     return false
   }
 
