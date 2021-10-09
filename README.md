@@ -4,6 +4,10 @@
 
 Sinpe-React is a React wrapper around the SINPE Móvil flow to send money via sms. It's just an automation that provide a basic API. 
 
+## Docs.
+
+Para más información revisa [**la documentación**](https://soloamilkar.github.io/sinpe-react).
+
 ## Features
 
 - Send money via sms.
