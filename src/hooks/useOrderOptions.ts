@@ -9,6 +9,7 @@ interface IuseOrderOptions {
   details?: string | null
   service: string
   setOrderOptions: (payload: object) => void
+  setTotalAmount: (newAmount: number) => void
 }
 
 const useOrderOptions = create<IuseOrderOptions>(
@@ -23,6 +24,11 @@ const useOrderOptions = create<IuseOrderOptions>(
       set((state) => ({
         ...state,
         ...payload
+      })),
+    setTotalAmount: (newAmount) =>
+      set((state) => ({
+        ...state,
+        totalAmount: newAmount
       }))
   }))
 )
