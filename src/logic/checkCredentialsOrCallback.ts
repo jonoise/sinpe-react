@@ -1,8 +1,8 @@
 import { CredentialsOptions } from '../types'
 
 const checkCredentialsOrCallback = (
-  credentials: CredentialsOptions | null | undefined,
-  cb: (() => any) | null | undefined
+  credentials: CredentialsOptions | undefined,
+  cb: (() => any) | undefined
 ): boolean => {
   if (credentials) {
     if (credentials.api_key && credentials.public_key) {
