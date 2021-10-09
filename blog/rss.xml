@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
     <channel>
-        <title>Sinpe React Website Blog</title>
+        <title>Sinpe React Blog</title>
         <link>https://soloamilkar.github.io/sinpe-react/blog</link>
-        <description>Sinpe React Website Blog</description>
-        <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
+        <description>Sinpe React Blog</description>
+        <lastBuildDate>Sat, 09 Oct 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[Welcome]]></title>
             <link>https://soloamilkar.github.io/sinpe-react/blog/welcome</link>
             <guid>welcome</guid>
-            <pubDate>Thu, 26 Aug 2021 00:00:00 GMT</pubDate>
+            <pubDate>Sat, 09 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></description>
         </item>
         <item>
@@ -27,13 +27,6 @@
             <guid>long-blog-post</guid>
             <pubDate>Wed, 29 May 2019 00:00:00 GMT</pubDate>
             <description><![CDATA[This is the summary of a very long blog post,]]></description>
-        </item>
-        <item>
-            <title><![CDATA[First Blog Post]]></title>
-            <link>https://soloamilkar.github.io/sinpe-react/blog/first-blog-post</link>
-            <guid>first-blog-post</guid>
-            <pubDate>Tue, 28 May 2019 00:00:00 GMT</pubDate>
-            <description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet]]></description>
         </item>
     </channel>
 </rss>

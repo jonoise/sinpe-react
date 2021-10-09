@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[192],{5442:function(e){e.exports=JSON.parse('{"allTagsPath":"/sinpe-react/blog/tags","slug":"/sinpe-react/blog/tags/welcome","name":"welcome","count":1,"permalink":"/sinpe-react/blog/tags/welcome"}')}}]);

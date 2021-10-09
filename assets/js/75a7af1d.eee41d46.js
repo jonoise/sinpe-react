@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[66],{3417:function(s){s.exports=JSON.parse('{"allTagsPath":"/sinpe-react/blog/tags","slug":"/sinpe-react/blog/tags/docusaurus","name":"docusaurus","count":4,"permalink":"/sinpe-react/blog/tags/docusaurus"}')}}]);
