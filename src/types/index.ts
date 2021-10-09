@@ -1,13 +1,13 @@
 export type CredentialsOptions = {
-  public_key: string | null | undefined
-  api_key: string | null | undefined
+  public_key: string | undefined
+  api_key: string | undefined
 }
 
 export type OrderOptions = {
   totalAmount: number
-  products?: object[] | null | undefined
-  orderId?: string | null | undefined
-  details?: string | null | undefined
+  products?: object[] | undefined
+  orderId?: string | undefined
+  details?: string | undefined
   userId?: string | number
 }
 
@@ -15,11 +15,11 @@ export type SinpeProps = {
   // SINGLE STORES
   vendorPhoneNumber: string
   order: OrderOptions
-  credentials?: CredentialsOptions | undefined | null
+  credentials?: CredentialsOptions | undefined
 
   // SETTINGS STORE
   callbackFunction?: (() => any) | undefined
-  styles?: StyleTypes | null
+  styles?: StyleTypes | undefined
   redirectUrl?: string | undefined
 }
 
