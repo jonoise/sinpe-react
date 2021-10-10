@@ -1,3 +1,7 @@
+## 🚨 This package lacks TESTS
+
+## 🙏 Collaborations are highly appreaciated. Feel free to fork and submit PR's ♥.
+
 ⚠🚨 This tools IS in DEVELOPMENT ⚠🚨
 
 ```bash
@@ -14,16 +18,15 @@ Sinpe-React is a React wrapper around the SINPE Móvil flow to send money via sm
 
 ## Docs.
 
-Para más información revisa [**la documentación**](https://soloamilkar.github.io/sinpe-react).
+Para una versión en español y más detallada ve a [**la documentación**](https://soloamilkar.github.io/sinpe-react).
 
 ## Features
 
-- Send money via sms.
-- Connect to your backend.
-- Define your data structure.
-- Written in Typecript.
+- Send money via sms using Sinpe Móvil (Costa Rica only).
+- Connect to your backend or CMS.
 - User friendly.
-- Styles highly customizable.
+- Styling highly customizable.
+- Written in Typecript.
 
 ## Quickstart
 
@@ -52,7 +55,7 @@ function App() {
 
 ## Using NextJS.
 
-If using NextJS you need to make styles import in \_app.js file.
+If using NextJS import styles in \_app.js file.
 
 ```js
 // _app.js
