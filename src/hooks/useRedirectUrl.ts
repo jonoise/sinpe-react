@@ -1,12 +1,12 @@
 import create from 'zustand'
 import { devtools } from 'zustand/middleware'
 
-interface IProperConfig {
+interface IRedirectUrl {
   redirectUrl: string | undefined
   setRedirectUrl: (url: string | undefined) => void
 }
 
-const useProperConf = create<IProperConfig>(
+const useRedirectUrl = create<IRedirectUrl>(
   devtools((set) => ({
     redirectUrl: undefined,
     setRedirectUrl: (url) =>
@@ -16,4 +16,4 @@ const useProperConf = create<IProperConfig>(
   }))
 )
 
-export default useProperConf
+export default useRedirectUrl
