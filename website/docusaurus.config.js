@@ -84,10 +84,17 @@ module.exports = {
           }, ]
         },
         {
+          title: 'Legal',
+          items: [{
+            label: 'Disclaimer',
+            to: '/disclaimer'
+          }]
+        },
+        {
           title: 'More',
           items: [{
-              label: 'Caveats',
-              to: '/'
+              label: 'Contacto',
+              to: 'mailto:amilkarms@outlook.com'
             },
             {
               label: 'GitHub',

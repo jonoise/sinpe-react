@@ -8,9 +8,9 @@ const FeatureList = [
     img: require('../../static/img/home/react3d.png').default,
     description: (
       <>
-        Puedes instalar Sinpe-React en cualquier proyecto que corra React. Sólo
-        necesitas especificar tu número de teléfono y la orden que será
-        procesada.
+        Puedes integrar Sinpe-React en cualquier checkout que esté potenciado{' '}
+        por React.
+        <br />+ Requiere poca configuración.
       </>
     )
   },
@@ -30,7 +30,7 @@ const FeatureList = [
     description: (
       <>
         Tienes la oportunidad de definir tu propia estructura de datos para la
-        orden y así conectarla con tu backend de preferencia.
+        orden y así conectarla con tu backend o CMS de preferencia.
       </>
     )
   }
