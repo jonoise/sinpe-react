@@ -15,7 +15,7 @@ import usePaymentMade from '../../../hooks/usePaymentMade'
 const RequiredFields = () => {
   const isMobile = checkIsMobile()
   const [res, makeRequest] = usePostData('send-switch-email')
-  const orderTotalAmount = useOrderOptions((state) => state.totalAmount)
+  const orderOptions = useOrderOptions((state) => state)
   const vendorPhoneNumber = useVendorPhoneNumber((state) => state.current)
   const setPaymentMade = usePaymentMade((state) => state.setPaymentMade)
   const {
@@ -48,11 +48,7 @@ const RequiredFields = () => {
     if (isMobile) {
       // SEND MESSAGE
       console.log(data)
-      const message = createMessage(
-        data.bank,
-        orderTotalAmount,
-        vendorPhoneNumber
-      )
+      const message = createMessage(data.bank, orderOptions, vendorPhoneNumber)
       window.location.href = `sms://${message}`
       setPaymentMade(true)
       return
