@@ -2,8 +2,10 @@ import React from 'react'
 import Select, { components } from 'react-select'
 import { Controller } from 'react-hook-form'
 import styles from './Form.module.css'
+import checkIsMobile from '../../../logic/isMobile'
 
 const selectBank = ({ control, errors }: { control: any; errors: any }) => {
+  const isMobile = checkIsMobile()
   const selectOptions = [
     { value: 'bn', label: `Banco Nacional` },
     { value: 'bcr', label: `Banco de Costa Rica` },
@@ -14,6 +16,7 @@ const selectBank = ({ control, errors }: { control: any; errors: any }) => {
     { value: 'promerica', label: `Banco Promérica` }
   ]
 
+  if (!isMobile) return null
   return (
     <>
       <Controller
