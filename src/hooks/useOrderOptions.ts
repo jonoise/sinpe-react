@@ -1,7 +1,7 @@
 import create from 'zustand'
 import { devtools } from 'zustand/middleware'
 
-interface IuseOrderOptions {
+export interface IuseOrderOptions {
   totalAmount: number
   user_id?: number | string | null
   order_id?: number | string | null
