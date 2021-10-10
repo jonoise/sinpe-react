@@ -42,10 +42,10 @@ export default SinpeModal
 const ModalHeader = (props: any) => {
   const { onClose } = props
   return (
-    <div className={modalStyles.header}>
+    <div className={modalStyles.header} onClick={() => onClose()}>
       <h2>Pago con SINPE Móvil</h2>
       <p className={globalStyles.btn}>
-        <FaTimes onClick={() => onClose()} />
+        <FaTimes />
       </p>
     </div>
   )
