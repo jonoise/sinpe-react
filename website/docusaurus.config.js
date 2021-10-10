@@ -32,7 +32,7 @@ module.exports = {
           editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/blog/'
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css')
+          customCss: [require.resolve('./src/css/custom.css'), require.resolve('sinpe-react/dist/sinpe-react.cjs.development.css')]
         }
       }
     ]
@@ -78,17 +78,20 @@ module.exports = {
           }]
         },
         {
-          title: 'Community',
+          title: 'Comunidad',
           items: [{
             label: 'Discord',
             href: 'https://discord.gg/vpjzpGgn'
-          }, ]
+          }, {
+            label: 'GitHub',
+            href: 'https://github.com/soloamilkar/sinpe-react'
+          }]
         },
         {
           title: 'Legal',
           items: [{
-            label: 'Disclaimer',
-            to: '/disclaimer'
+            label: 'Licencia',
+            to: '/licencia'
           }]
         },
         {
@@ -98,8 +101,12 @@ module.exports = {
               to: 'mailto:amilkarms@outlook.com'
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/soloamilkar/sinpe-react'
+              label: 'Contribuir',
+              to: 'https://github.com/soloamilkar/sinpe-react'
+            },
+            {
+              label: 'Donar 💓',
+              to: '/donar'
             }
           ]
         }
