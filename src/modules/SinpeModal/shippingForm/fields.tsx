@@ -11,11 +11,13 @@ import { useForm } from 'react-hook-form'
 import createMessage from '../../../logic/createMessage'
 import useOrderOptions from '../../../hooks/useOrderOptions'
 import useVendorPhoneNumber from '../../../hooks/useVendorPhoneNumber'
+import usePaymentMade from '../../../hooks/usePaymentMade'
 const RequiredFields = () => {
   const isMobile = checkIsMobile()
   const [res, makeRequest] = usePostData('send-switch-email')
   const orderTotalAmount = useOrderOptions((state) => state.totalAmount)
   const vendorPhoneNumber = useVendorPhoneNumber((state) => state.current)
+  const setPaymentMade = usePaymentMade((state) => state.setPaymentMade)
   const {
     register,
     handleSubmit,
@@ -52,6 +54,7 @@ const RequiredFields = () => {
         vendorPhoneNumber
       )
       window.location.href = `sms://${message}`
+      setPaymentMade(true)
       return
     }
     // SEND EMAIL

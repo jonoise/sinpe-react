@@ -3,10 +3,13 @@ import styles from './Receipt.module.css'
 import { useForm } from 'react-hook-form'
 import checkIsMobile from '../../../logic/isMobile'
 import useProperConf from '../../../hooks/useProperConf'
+import usePaymentMade from '../../../hooks/usePaymentMade'
+import toast from 'light-toast'
 
 const ConfirmReceipt = () => {
   const isMobile = checkIsMobile()
   const properlyConfigured = useProperConf((state) => state.isProperConfig)
+  const paymentMade = usePaymentMade((state) => state.isPaymentMade)
   const {
     register,
     formState: { errors },
@@ -14,7 +17,12 @@ const ConfirmReceipt = () => {
   } = useForm()
 
   const onSubmit = (data: object) => {
+    if (!paymentMade) {
+      toast.fail('Realice el pago primero.')
+      return null
+    }
     console.log(data)
+    return null
   }
 
   return (
