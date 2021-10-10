@@ -49,7 +49,7 @@ const RequiredFields = () => {
       // SEND MESSAGE
       console.log(data)
       const message = createMessage(data.bank, orderOptions, vendorPhoneNumber)
-      window.location.href = `sms://${message}`
+      window.location.href = `sms:${message}`
       setPaymentMade(true)
       return
     }
