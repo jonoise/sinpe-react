@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Introducción
 
+Sinpe React es simplemente un modal que se abre al accionar un botón.
+
 Vamos a descubrir **Sinpe React en menos de 5 minutos**.
 
 ## Getting Started
@@ -24,16 +26,30 @@ npm install sinpe-react
 yarn add sinpe-react
 ```
 
-## Start your site
+## Llama el componente
 
-Run the development server:
+```jsx
+// default imports ↓
+import SinpeReact from 'sinpe-react';
+import "sinpe-react/dist/sinpe-react.cjs.development.css"
+// default imports ↑
 
-```shell
-cd my-website
-
-npx docusaurus start
+function Checkout() {
+    // Puedes llamarlo en el checkout, o en cualquier parte realmente.
+    const order={"..."}
+    const myNumber={"..."}
+    return (
+    <SinpeReact
+        vendorPhoneNumber={myNumber}
+        order={order}
+    />
+    );
+}
 ```
 
-Your site starts at `http://localhost:3000`.
+El componente necesita de 2 props para funcionar:
 
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and display your changes.
+- El número de la persona a la cuál se le va a hacer el depósito.
+- La orden a procesar.
+
+Revisa qué otras props se puede usar.
