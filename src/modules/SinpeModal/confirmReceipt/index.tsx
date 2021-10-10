@@ -2,9 +2,11 @@ import React from 'react'
 import styles from './Receipt.module.css'
 import { useForm } from 'react-hook-form'
 import checkIsMobile from '../../../logic/isMobile'
+import useProperConf from '../../../hooks/useProperConf'
 
 const ConfirmReceipt = () => {
   const isMobile = checkIsMobile()
+  const properlyConfigured = useProperConf((state) => state.isProperConfig)
   const {
     register,
     formState: { errors },
@@ -36,6 +38,7 @@ const ConfirmReceipt = () => {
               type="submit"
               value="Confirmar Orden"
               className={styles.receiptBtn}
+              disabled={!properlyConfigured}
             />
           </div>
           {errors.receipt && (
