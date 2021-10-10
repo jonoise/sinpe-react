@@ -1,12 +1,15 @@
 import { banks } from '../info/banks'
-
+import { IuseOrderOptions } from '../hooks/useOrderOptions'
 const createMessage = (
   bank: { value: string; label: string },
-  totalAmount: number,
+  order: IuseOrderOptions,
   vendorPhoneNumber: string
 ) => {
   const bankNumber = banks[bank.value]
-  return `+506${bankNumber}?body=PASE ${totalAmount} ${vendorPhoneNumber} COMPRA CREADORES.CASH`
+  const totalAmount = order.totalAmount
+  const details = order.details
+
+  return `+506${bankNumber}?body=PASE ${totalAmount} ${vendorPhoneNumber} ${details}`
 }
 
 export default createMessage
