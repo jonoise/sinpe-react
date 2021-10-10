@@ -8,11 +8,11 @@
     <subtitle>Sinpe React Blog</subtitle>
     <icon>https://soloamilkar.github.io/sinpe-react/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[Welcome]]></title>
-        <id>welcome</id>
-        <link href="https://soloamilkar.github.io/sinpe-react/blog/welcome"/>
+        <title type="html"><![CDATA[Version 1 Preview]]></title>
+        <id>version-1</id>
+        <link href="https://soloamilkar.github.io/sinpe-react/blog/version-1"/>
         <updated>2021-10-09T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></summary>
+        <summary type="html"><![CDATA[La versión 1 del plugin ya está casi lista.]]></summary>
         <author>
             <name>Amilkar</name>
             <uri>https://github.com/soloamilkar/</uri>

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Version 1 Preview","permalink":"/sinpe-react/blog/version-1"},{"title":"MDX Blog Post","permalink":"/sinpe-react/blog/mdx-blog-post"},{"title":"Long Blog Post","permalink":"/sinpe-react/blog/long-blog-post"}]}')}}]);
