@@ -7746,10 +7746,10 @@ signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3:
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.5.tgz#9e3e8cc0c75a99472b44321033a7702e7738252f"
   integrity sha512-KWcOiKeQj6ZyXx7zq4YxSMgHRlod4czeBQZrPb8OKcohcqAXShm7E20kEMle9WBt26hFcAf0qLOcp5zmY7kOqQ==
 
-sinpe-react@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/sinpe-react/-/sinpe-react-1.0.4.tgz#40c0f28987289df65b0e647ba04e61eb03942187"
-  integrity sha512-0lzROwMTij/iUVfdcSJCfx85f61WWnOGxQjhm7nPYeHwNohKu6pxkYmTB4ORaxAsURc1nRGWbsEj+vpPySXXwQ==
+sinpe-react@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/sinpe-react/-/sinpe-react-1.0.5.tgz#b17ba8975df35eb8699e6b1f8643869f36f24c64"
+  integrity sha512-vdRwmNDlOQJC5FsjIZRzJSUk6adYc8CxvIGVxff6BSQ43GGTIireHGoLsfUU7KQ7LODM0og1dZBlLJ7Y3XZ9eg==
   dependencies:
     axios "^0.22.0"
     light-toast "^0.3.4"
