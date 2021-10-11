@@ -20,18 +20,20 @@ const Initializer = (props: SinpeProps) => {
   const setCb = useCheckoutCallback((state) => state.setCb)
   const setRedirectUrl = useRedirectUrl((state) => state.setRedirectUrl)
 
+  // ORDER USE EFFECT
+  useEffect(() => {
+    setOrderOptions(props.order)
+    // SANITIZE TOTAL AMOUNT
+    const s_totalAmount = sanitizeTotalAmount(props.order.totalAmount)
+    setTotalAmount(s_totalAmount)
+  }, [props.order])
+
   useEffect(() => {
     // INITIALIZING DATA
     setCredentials(props.credentials)
     setVendorNumber(props.vendorPhoneNumber)
-    setOrderOptions(props.order)
     setCb(props.callbackFunction)
     setRedirectUrl(props.redirectUrl)
-
-    // SANITIZE TOTAL AMOUNT
-    const s_totalAmount = sanitizeTotalAmount(props.order.totalAmount)
-    setTotalAmount(s_totalAmount)
-
     // VALIDATE PROPS
     const validInit = initSinpe(props)
     setProperConfig(validInit)

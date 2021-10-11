@@ -9,6 +9,7 @@ const createMessage = (
   const totalAmount = order.totalAmount
   const details = order.details
 
+  // Los signos después del bankNumber mappeand un regex para saber qué celular está siendo utilizado. (Android/IOS)
   return `+506${bankNumber};?&body=PASE ${totalAmount} ${vendorPhoneNumber} ${details}`
 }
 
