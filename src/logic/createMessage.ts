@@ -9,7 +9,7 @@ const createMessage = (
   const totalAmount = order.totalAmount
   const details = order.details
 
-  return `+506${bankNumber}?body=PASE ${totalAmount} ${vendorPhoneNumber} ${details}`
+  return `+506${bankNumber};?&body=PASE ${totalAmount} ${vendorPhoneNumber} ${details}`
 }
 
 export default createMessage
